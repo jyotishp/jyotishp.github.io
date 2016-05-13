@@ -1,17 +1,17 @@
 html {
+	background:#f8f7f3;
 	font-family:"Josefin Sans",sans-serif;
-	background:#f8f7f3
 }
 
 body {
+	line-height:1.4;
 	font-size:1em;
-	line-height:1.4
 }
 
 .wrapper {
-	width:90%;
 	margin:0 auto;
-	padding-top:10%
+	width:90%;
+	padding-top:12%;
 }
 
 p {
@@ -28,7 +28,7 @@ p {
 	margin:0 auto 20px;
 	background:transparent url(../img/jp.svg) center center no-repeat;
 	background-size:100%;
-	text-indent:100%;
+	text-indent:110%;
 	white-space:nowrap;
 	overflow:hidden
 }
@@ -39,4 +39,27 @@ p {
 	text-align:center;
 	color:#424951;
 	line-height:1.3em
+}
+
+.blink {
+  animation: blink-animation 1s infinite;
+  -webkit-animation: blink-animation 1s infinite;
+}
+
+@keyframes blink-animation {
+  0%, 30% {
+  	opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes blink-animation {
+  0%, 30% {
+  	opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
