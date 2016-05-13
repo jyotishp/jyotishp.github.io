@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'fertigopro';
+    src: url('../fonts/Fertigo_PRO-webfont.eot');
+    src: url('../fonts/Fertigo_PRO-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Fertigo_PRO-webfont.woff2') format('woff2'),
+         url('../fonts/Fertigo_PRO-webfont.woff') format('woff'),
+         url('../fonts/Fertigo_PRO-webfont.ttf') format('truetype'),
+         url('../fonts/Fertigo_PRO-webfont.svg#fertigo_proregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+

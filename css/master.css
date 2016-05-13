@@ -1,0 +1,42 @@
+html {
+	font-family:"Josefin Sans",sans-serif;
+	background:#f8f7f3
+}
+
+body {
+	font-size:1em;
+	line-height:1.4
+}
+
+.wrapper {
+	width:90%;
+	margin:0 auto;
+	padding-top:10%
+}
+
+p {
+	margin:0 auto 20px;
+	font-size:1.2em;
+	text-align:center;
+	color:#424951;
+	line-height:1.3em
+}
+
+.logo {
+	width:102px;
+	height:85px;
+	margin:0 auto 20px;
+	background:transparent url(../img/jp.svg) center center no-repeat;
+	background-size:100%;
+	text-indent:100%;
+	white-space:nowrap;
+	overflow:hidden
+}
+
+p {
+	margin:0 auto 20px;
+	font-size:1.2em;
+	text-align:center;
+	color:#424951;
+	line-height:1.3em
+}
