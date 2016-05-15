@@ -24,6 +24,15 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-creative-commons-noncommercial-us:before {
+    content: "\e907";
+}
+.icon-creative-commons-attribution:before {
+    content: "\e908";
+}
+.icon-creative-commons:before {
+    content: "\e909";
+}
 .icon-home:before {
     content: "\e900";
 }
@@ -45,4 +54,3 @@
 .icon-twitter:before {
     content: "\e906";
 }
-
