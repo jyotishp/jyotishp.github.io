@@ -1,6 +1,6 @@
 html {
 	background:#f8f7f3;
-	font-family: 'Linux Libertine', serif;
+	font-family: 'Asap', sans-serif;
 }
 
 body {
@@ -9,7 +9,7 @@ body {
 }
 
 h1, h2, h3, footer {
-	font-family: 'Linux Biolinum', sans-serif;
+	font-family:"Josefin Sans",sans-serif;
 }
 
 .wrapper {
@@ -21,13 +21,14 @@ h1, h2, h3, footer {
 p {
 	margin:0 auto 20px;
 	font-size:1.2em;
-	color:#424951;
-	line-height:1.3em;
+	color:#222529;
+	line-height:1.4em;
 }
 
 p.intro, nav {
 	font-family:"Josefin Sans",sans-serif;
 	text-align:center;
+	color: #424951;
 }
 
 footer {
