@@ -6,10 +6,16 @@ html {
 body {
 	line-height:1.4;
 	font-size:1em;
+	position: relative;
+	padding-bottom: 108px;
 }
 
 h1, h2, h3, footer {
 	font-family:"Josefin Sans",sans-serif;
+}
+
+h1, h2 {
+	color: #C65D5D;
 }
 
 .wrapper {
@@ -85,6 +91,7 @@ footer [class^="icon-"], footer [class*=" icon-"] {
 
 .navbar {
 	display: -webkit-flex;
+	background-color: #fff;
 	display: flex;
 	position: fixed;
 	z-index: 100;
@@ -155,4 +162,8 @@ footer [class^="icon-"], footer [class*=" icon-"] {
 	left: 0;
 	right: 0;
 	z-index: -10;
+}
+
+ul, dl {
+	color:#333;
 }

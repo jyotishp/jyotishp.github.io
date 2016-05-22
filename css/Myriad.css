@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'Myriad';
+    src: local('Myriad Pro');
+    src: url('../fonts/MyriadPro-Regular.eot') format('embedded-opentype'),
+         url('../fonts/MyriadPro-Regular.woff') format('woff'),
+         url('../fonts/MyriadPro-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+	font-family: 'MyriadI';
+	src: local('Myriad Pro Italics'),
+		 url('../fonts/MyriadPro-It.eot') format('embedded-opentype'),
+         url('../fonts/MyriadPro-It.woff') format('woff'),
+         url('../fonts/MyriadPro-It.ttf') format('truetype');
+}
