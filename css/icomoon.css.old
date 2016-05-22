@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'icomoon';
-    src:    url('../fonts/icomoon.eot?msl5ll');
-    src:    url('../fonts/icomoon.eot?msl5ll#iefix') format('embedded-opentype'),
-        url('../fonts/icomoon.ttf?msl5ll') format('truetype'),
-        url('../fonts/icomoon.woff?msl5ll') format('woff'),
-        url('../fonts/icomoon.svg?msl5ll#icomoon') format('svg');
+    src:    url('../fonts/icomoon.eot?y6f3yu');
+    src:    url('../fonts/icomoon.eot?y6f3yu#iefix') format('embedded-opentype'),
+        url('../fonts/icomoon.ttf?y6f3yu') format('truetype'),
+        url('../fonts/icomoon.woff?y6f3yu') format('woff'),
+        url('../fonts/icomoon.svg?y6f3yu#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -24,9 +24,6 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-bitbucket:before {
-    content: "\e90f";
-}
 .icon-creative-commons-noncommercial-us:before {
     content: "\e907";
 }
@@ -45,31 +42,15 @@
 .icon-envelop:before {
     content: "\e902";
 }
-.icon-bubbles:before {
-    content: "\e90b";
-}
-.icon-trophy:before {
-    content: "\e90c";
-}
 .icon-briefcase:before {
     content: "\e903";
 }
 .icon-cool:before {
     content: "\e904";
 }
-.icon-embed2:before {
-    content: "\e905";
-}
 .icon-facebook2:before {
-    content: "\e90a";
+    content: "\e905";
 }
 .icon-twitter:before {
     content: "\e906";
 }
-.icon-github:before {
-    content: "\e90d";
-}
-.icon-linkedin:before {
-    content: "\e90e";
-}
-

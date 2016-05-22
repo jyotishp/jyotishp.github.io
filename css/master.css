@@ -184,6 +184,26 @@ ul, dl {
 	color:#333;
 }
 
+a {
+	text-decoration: none;
+}
+
+.icon-bar {
+	text-align: center;
+}
+
+.icon-bar a {
+	color: #333;
+}
+
+.icon-bar [class^="icon-"], .icon-bar [class*=" icon-"] {
+	transition: ease-out 0.2s;
+}
+
+.icon-bar [class^="icon-"]:hover, .icon-bar [class*=" icon-"]:hover {
+	color: #C65D5D;
+}
+
 @media only screen and (min-width:768px) {
 	html {
 		font-family: 'Myriad', 'Asap', sans-serif;
@@ -191,6 +211,14 @@ ul, dl {
 
 	body {
 		font-size: 1.2em;
+	}
+
+	.wrapper {
+		width: 64vw;
+	}
+
+	.background {
+		background-size: 30vw;
 	}
 
 	.navbar {
