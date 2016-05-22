@@ -221,4 +221,9 @@ ul, dl {
 		border-top: none;
 		border-bottom: 3px solid #5D5DC6;
 	}
+
+	.logo {
+		width:120px;
+		height:100px;
+	}
 }
