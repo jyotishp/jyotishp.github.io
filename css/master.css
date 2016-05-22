@@ -6,8 +6,8 @@ html {
 body {
 	line-height:1.4;
 	font-size:1em;
+	min-height: 100vh;
 	position: relative;
-	padding-bottom: 108px;
 }
 
 h1, h2, h3, footer {
@@ -211,6 +211,10 @@ a {
 
 	body {
 		font-size: 1.2em;
+	}
+
+	p {
+		color: #424951;
 	}
 
 	.wrapper {
