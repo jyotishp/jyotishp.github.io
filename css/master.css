@@ -6,8 +6,8 @@ html {
 body {
 	line-height:1.4;
 	font-size:1em;
-	min-height: 100vh;
 	position: relative;
+	min-height: 100vh;
 }
 
 h1, h2, h3, footer {
@@ -22,6 +22,7 @@ h1, h2 {
 	margin:0 auto;
 	width:90%;
 	padding-top:12%;
+	padding-bottom: 110px;
 }
 
 p {
@@ -261,5 +262,9 @@ a {
 	.logo {
 		width:120px;
 		height:100px;
+	}
+
+	footer {
+		bottom: 10px;
 	}
 }
