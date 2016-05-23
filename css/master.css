@@ -205,6 +205,22 @@ a {
 	color: #C65D5D;
 }
 
+.btn {
+	border: 2px solid #C65D5D;
+	background-color: #C65D5D;
+	padding: 12px 18px;
+	color: #fff;
+	border-radius: 30px;
+	transition: 0.36s;
+	font-family: 'Asap';
+}
+
+.btn:hover, .btn:active, .btn:focus {
+	background-color: #5DC65D;
+	border: 2px solid #5DC65D;
+	border-radius: 0px 30px;
+}
+
 @media only screen and (min-width:768px) {
 	html {
 		font-family: 'Myriad', 'Asap', sans-serif;
