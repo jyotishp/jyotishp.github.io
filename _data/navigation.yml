@@ -1,8 +1,8 @@
 - text: <span class="icon-home"></span><br>Home
   url: /
 - text: <span class="icon-briefcase"></span><br>Projects
-  url: /projects.html
+  url: /projects
 - text: <span class="icon-cool"></span><br>About
-  url: /about-me.html
+  url: /about-me
 - text: <span class="icon-quill"></span><br>Blog
-  url: /blog.html
+  url: /blog
