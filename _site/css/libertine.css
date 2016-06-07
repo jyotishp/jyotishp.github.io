@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'Linux Libertine';
+    src: url('../fonts/LinLibertine_DR.woff') format('woff'),
+         url('../fonts/LinLibertine_DR.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Linux Biolinum';
+    src: url('../fonts/LinBiolinum_R.woff') format('woff'),
+         url('../fonts/LinBiolinum_R.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
