@@ -99,9 +99,9 @@ footer [class^="icon-"], footer [class*=" icon-"] {
 	bottom: 0;
 	height: 50px;
 	width: 100%;
-	-webkit-box-shadow: 0px -11px 6px -3px rgba(148,148,148,1);
-	-moz-box-shadow: 0px -11px 6px -3px rgba(148,148,148,1);
-	box-shadow: 0px -11px 6px -3px rgba(148,148,148,1);
+	-webkit-box-shadow: 0px -11px 6px -9px rgba(148,148,148,1);
+	-moz-box-shadow: 0px -11px 6px -9px rgba(148,148,148,1);
+	box-shadow: 0px -11px 6px -9px rgba(148,148,148,1);
 }
 
 .navbar .item {
@@ -222,16 +222,13 @@ a {
 }
 
 @media only screen and (min-width:768px) {
-	html {
-		font-family: 'Myriad', 'Asap', sans-serif;
-	}
-
 	body {
 		font-size: 1.2em;
 	}
 
 	p {
-		color: #424951;
+		text-align: justify;
+		color: #363C42;
 	}
 
 	.wrapper {
@@ -244,9 +241,9 @@ a {
 
 	.navbar {
 		bottom: initial;
-		-webkit-box-shadow: 0px 11px 6px -12px rgba(148,148,148,1);
-		-moz-box-shadow: 0px 11px 6px -12px rgba(148,148,148,1);
-		box-shadow: 0px 11px 6px -12px rgba(148,148,148,1);
+		-webkit-box-shadow: 0px 11px 6px -3px rgba(148,148,148,1);
+		-moz-box-shadow: 0px 11px 6px -3px rgba(148,148,148,1);
+		box-shadow: 0px 11px 6px -3px rgba(148,148,148,1);
 		height: 63px;
 	}
 
