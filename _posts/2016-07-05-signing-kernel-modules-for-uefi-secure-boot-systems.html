@@ -16,7 +16,7 @@ banner: secure-boot.svg
 </p>
 <h2>Generating Self-Signed Key Pair</h2>
 <p>
-	Note that if the system is not UEFI-based or if UEFI Secure Boot is not enabled, the kernel modules need not be signed. You need to generate a public and private X.509 key pair. This key will be used to sign kernel modules after it has been built. The public key will be used to authenticate kernel modules when they are loaded.
+	Note that if the system is not UEFI-based or if UEFI Secure Boot is not enabled, the kernel modules need not be signed. You need to generate a public and a private X.509 key pair. These keys will be used to sign kernel modules after they have been built. The public key will be used to authenticate kernel modules when they are loaded.
 </p>
 <p>
 	Now, open your terminal and head to the folder where you wish to save the generated key pair. Now, using <code>openssl</code>, generate the public and private key pair.
@@ -25,7 +25,7 @@ banner: secure-boot.svg
 openssl req -x509 -new -nodes -utf8 -sha256 -days 36500 -outform DER -out public_key.der -keyout private_key.priv
 {% endhighlight %}
 <p>
-	Now, you will be prompted to enter your country code, which in my case is IN. Next <i>State/Province name</i> followed by <i>City, Organization Name, Unit Name</i> and <i>Common Name</i>. Next fill your <i>email address</i> at the prompt. Now, you have sucessfully generated your public and private keys. The above command creates a public and private key pair with <code>utf-8</code> encoding, using <code>sha256</code> encryption valid for 10 years. You should notice <i>public_key.der</i> and <i>private_key.priv</i> files in the current directory.
+	Now, you will be prompted to enter your country code. Next <i>State/Province name</i> followed by <i>City, Organization Name, Unit Name</i> and <i>Common Name</i>. Next fill your <i>email address</i> at the prompt. Now, you have sucessfully generated your public and private keys. The above command creates a public and private key pair with <code>utf-8</code> encoding, using <code>sha256</code> encryption valid for 10 years. Check for <i>public_key.der</i> and <i>private_key.priv</i> files in the current directory. If you can't find them, you did something wrong. Repeat the process.
 </p>
 <h2>Adding your self-signed public key to MOK list</h2>
 <p>
@@ -35,7 +35,7 @@ openssl req -x509 -new -nodes -utf8 -sha256 -days 36500 -outform DER -out public
 sudo mokutil --import public_key.der
 {% endhighlight %}
 <p>
-	You will be asked to enter a password. Give any password you like. Now, reboot your machine. You should get a prompt asking if you want to continue adding key to your MOK list. These prompts slightly vary depending upon your firmware. You will asked to enter the passphrase you defined earlier while importing the key using <code>mokutil</code>. Enter it. Done! You have successfully added a self-signed public key to your MOK list.
+	You will be asked to enter a password. Give any password you like. Now, reboot your machine. You should get a prompt asking if you want to continue adding key to your MOK list. These prompts slightly vary depending upon your firmware. You will be prompted to enter the passphrase you defined earlier while importing the key using <code>mokutil</code>. Enter it. Done! You have successfully added a self-signed public key to your MOK list.
 </p>
 <h2>Signing your Kernel Module</h2>
 <p>
@@ -45,5 +45,5 @@ sudo mokutil --import public_key.der
 /usr/src/$(uname -r)/scripts/sign-file sha256 private_key.priv public_key.der your_module.ko
 {% endhighlight %}
 <p>
-	There you have it, a self-signed kernel module. You can insert it using modprobe or insmod.
+	Congratulations! You have a self-signed kernel module. You can insert it using modprobe or insmod.
 </p>
