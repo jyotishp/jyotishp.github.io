@@ -2,7 +2,7 @@
 	<div class="cat">
 		<p>
 			<span>{{ page.topic }}</span> in <span>{{ page.type }}</span> by <a href="{{ site.baseurl }}/about-me">Jyotish</a><br>
-			On 5<sup>th</sup> May, 2016.
+			On {{ page.date | date: '%B %d, %Y' }}.
 		</p>
 	</div>
 	<footer>

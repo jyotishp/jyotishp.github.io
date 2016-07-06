@@ -71,6 +71,7 @@ nav {
 	position: relative;
 	overflow: hidden;
 	background-color: #333;
+	font-family: 'Open Sans', sans-serif;
 	height: 63vh;
 }
 
@@ -81,6 +82,7 @@ nav {
 	padding: 50px 18px 0px;
 	color: #fff;
 	margin: 0;
+	text-shadow: 1px 1px 1px #333;
 }
 
 .banner .bg {
@@ -95,10 +97,27 @@ nav {
 
 .date, .topic {
 	display: none;
+	font-family: 'Open Sans', sans-serif;
 }
 
 .content {
 	background-color: #f8f7f3;
+/*	color: #424951;
+	font-family: 'Asap', sans-serif;*/
+}
+
+.content h2 {
+	color: #C65D5D;
+	padding: 0px 25px;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.content p > code {
+	background-color: #343642;
+	color: #ddd;
+	padding: 3px;
+	font-size: 0.82em;
+	border-radius: 4px;
 }
 
 .content p {
@@ -240,6 +259,7 @@ footer [class^="icon-"], footer [class*=" icon-"] {
 
 	.banner h1 {
 		padding-top: 75px;
+		text-align: center;
 	}
 }
 

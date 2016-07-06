@@ -1,0 +1,49 @@
+---
+layout: blog
+title: Signing kernel modules for UEFI secure boot systems
+topic: Kernel Development
+type: Tutorials
+categories: tutorials kernel-development
+date: 2016-07-05 12:30:00
+back-url: tutorials/kernel-development
+banner: secure-boot.svg
+---
+<p>
+	Most of the Linux distributions now-a-days include support for the UEFI Secure Boot feature, which means that these Linux distributions can be installed and run on systems where UEFI Secure Boot is enabled. When Secure Boot is enabled, the EFI operating system boot loaders, the Linux kernel, and all kernel modules must be signed with a private key and authenticated with the corresponding public key. Note that not all UEFI-based systems include support for Secure Boot.
+</p>
+<p>
+	The information provided in this article describes steps necessary to self-sign your privately built kernel modules on UEFI-based systems where Secure Boot is enabled. If you are interested to know more about UEFI, here's the link to <a href="https://en.wikipedia.org/wiki/Unified_Extensible_Firmware_Interface" target="_blank">Wikipedia page</a>.
+</p>
+<h2>Generating Self-Signed Key Pair</h2>
+<p>
+	Note that if the system is not UEFI-based or if UEFI Secure Boot is not enabled, the kernel modules need not be signed. You need to generate a public and private X.509 key pair. This key will be used to sign kernel modules after it has been built. The public key will be used to authenticate kernel modules when they are loaded.
+</p>
+<p>
+	Now, open your terminal and head to the folder where you wish to save the generated key pair. Now, using <code>openssl</code>, generate the public and private key pair.
+</p>
+{% highlight bash %}
+openssl req -x509 -new -nodes -utf8 -sha256 -days 36500 -outform DER -out public_key.der -keyout private_key.priv
+{% endhighlight %}
+<p>
+	Now, you will be prompted to enter your country code, which in my case is IN. Next <i>State/Province name</i> followed by <i>City, Organization Name, Unit Name</i> and <i>Common Name</i>. Next fill your <i>email address</i> at the prompt. Now, you have sucessfully generated your public and private keys. The above command creates a public and private key pair with <code>utf-8</code> encoding, using <code>sha256</code> encryption valid for 10 years. You should notice <i>public_key.der</i> and <i>private_key.priv</i> files in the current directory.
+</p>
+<h2>Adding your self-signed public key to MOK list</h2>
+<p>
+	Next, we need to add this key to your Machine Owner Keys (MOK) list. We will use <code>mokutil</code> to do this.
+</p>
+{% highlight bash %}
+sudo mokutil --import public_key.der
+{% endhighlight %}
+<p>
+	You will be asked to enter a password. Give any password you like. Now, reboot your machine. You should get a prompt asking if you want to continue adding key to your MOK list. These prompts slightly vary depending upon your firmware. You will asked to enter the passphrase you defined earlier while importing the key using <code>mokutil</code>. Enter it. Done! You have successfully added a self-signed public key to your MOK list.
+</p>
+<h2>Signing your Kernel Module</h2>
+<p>
+	Now, you need to sign your kernel module. To do it, type the following in your terminal
+</p>
+{% highlight bash %}
+/usr/src/$(uname -r)/scripts/sign-file sha256 private_key.priv public_key.der your_module.ko
+{% endhighlight %}
+<p>
+	There you have it, a self-signed kernel module. You can insert it using modprobe or insmod.
+</p>
