@@ -221,6 +221,97 @@ a {
 	border-radius: 0px 30px;
 }
 
+.posts {
+	display: block;
+	font-size: 1.2em;
+	padding: 15px;
+	margin-top: -3px;
+}
+
+.posts li {
+	display: inline-block;
+	margin-bottom: 5px;
+	width: 100%;
+}
+
+.posts li > a {
+	color: #333;
+	padding: 13px 10px;
+	box-shadow: 0px 0px 7px -3px #555;
+	display: block;
+	background-color: rgba(248,247,243,0.72);
+	margin-bottom: 10px;
+	transition: 0.1s ease-out;
+	border-bottom: 2px solid #C65D5D;
+}
+
+.posts li > a:hover {
+	box-shadow: 0px 0px 12px -3px #555;
+	border-color: #5D6C5D;
+}
+
+.posts li > a > time {
+	font-size: 0.9em;
+	font-family:"Josefin Sans",sans-serif;
+	color: #555;
+	display: block;
+	text-align: right;
+	transition: 0.1s ease-out;
+}
+
+.posts .icon-quill {
+	font-size: 0.7em;
+}
+
+.side-bar {
+	position: fixed;
+	background-color: rgba(248,247,243,0.96);
+	width: 64vw;
+	height: 100vh;
+	padding: 15px;
+	top: 0;
+	right: -100%;
+	transition: 0.1s ease-out;
+	box-shadow: 10px 10px 24px 3px #333;
+	z-index: 10;
+}
+
+.side-bar.active {
+	right: 0;
+}
+
+.side-bar .side-bar-button {
+	position: absolute;
+	top: 20px;
+	right: 105vw;
+	color: #C65D5D;
+	font-size: 1.5em;
+	transition: 0.1s ease-out;
+}
+
+.side-bar.active .side-bar-button {
+	right: 20px;
+}
+
+.side-bar a {
+	color: #333;
+}
+
+.side-bar ul {
+	padding: 10px;
+}
+
+.side-bar ul li {
+	display: block;
+	margin-top: 10px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #ccc;
+}
+
+.side-bar ul li > a {
+	font-size: 1.2em;
+}
+
 @media only screen and (min-width:768px) {
 	body {
 		font-size: 1.2em;
@@ -279,5 +370,15 @@ a {
 
 	footer {
 		bottom: 10px;
+	}
+
+	.posts li {
+		width: 49.64444%;
+	}
+
+	.posts li > a {
+		border-bottom: none;
+		border-left: 2px solid #C65D5D;
+		padding: 18px 15px;
 	}
 }

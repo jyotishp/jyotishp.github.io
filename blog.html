@@ -3,7 +3,55 @@ layout: default
 title: Blog | Jyotish Poonganam
 permalink: /blog
 ---
+		<div class="background"></div>
 		<div class="wrapper">
-			<h1 class="logo">Jyotish Poonganam</h1>
-			<p class="intro">Coming Soon!<span class="blink">&vert;</span></p>
+			<div class="side-bar">
+				<h2>Categories</h2>
+				<span class="side-bar-button icon-menu" onclick="toggle_side_bar()"></span>
+				<ul>
+				{% assign categories_list = site.categories %}
+					<!-- {% if categories_list.first[0] == null %}
+						{% for category in categories_list %}
+							<li><a href="#{{ category }}">{{ category | capitalize }} ({{ site.tags[category].size }})</a></li>
+						{% endfor %}
+					{% else %} -->
+						{% for category in categories_list %}
+							<li><a href="#{{ category[0] }}">{{ category[0] | capitalize }}</a></li>
+						{% endfor %}
+					{% endif %}
+				{% assign categories_list = nil %}
+				</ul>
+			</div>
+
+		{% for tag in site.categories %}
+			<h2 id="{{ tag[0] }}"><span class="icon-books"></span>{{ tag[0] | capitalize }}</h2>
+			<ul class="posts">
+			{% assign pages_list = tag[1] %}
+				{% for post in pages_list %}
+					{% if post.title != null %}
+						{% if group == null or group == post.group %}
+							<li><a href="//{{ site.url }}{{ post.url }}">{{ post.title }}<br><br>
+							<time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished"><span class="icon-quill"></span> {{ post.date | date: "%B %d, %Y" }}</time></a></li>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			{% assign pages_list = nil %}
+			{% assign group = nil %}
+			</ul>
+		{% endfor %}
 		</div>
+		<script type="text/javascript">
+			function toggle_side_bar() {
+				var sidebar = document.getElementsByClassName('side-bar')[0];
+				// console.log(sidebar.childNodes[3].className);
+				if (!sidebar.className.match(/(?:^|\s)active(?!\S)/)) {
+					sidebar.className += " active";
+					sidebar.childNodes[3].className = 'side-bar-button icon-cross';
+				}
+				else {
+					var sidebar = document.getElementsByClassName('side-bar')[0];
+					sidebar.className = document.getElementsByClassName("side-bar")[0].className.replace( /(?:^|\s)active(?!\S)/g , '' );
+					sidebar.childNodes[3].className = 'side-bar-button icon-menu';
+				}
+			}
+		</script>

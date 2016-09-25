@@ -6,12 +6,12 @@
 </description>
     <link>jyotishp.github.io/</link>
     <atom:link href="jyotishp.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 10 Aug 2016 18:20:14 +0530</pubDate>
-    <lastBuildDate>Wed, 10 Aug 2016 18:20:14 +0530</lastBuildDate>
-    <generator>Jekyll v3.1.6</generator>
+    <pubDate>Mon, 26 Sep 2016 00:40:42 +0530</pubDate>
+    <lastBuildDate>Mon, 26 Sep 2016 00:40:42 +0530</lastBuildDate>
+    <generator>Jekyll v3.2.1</generator>
     
       <item>
-        <title>Introduction to Kernel Development</title>
+        <title>Easy Introduction to Kernel Development</title>
         <description></description>
         <pubDate>Wed, 06 Jul 2016 18:00:00 +0530</pubDate>
         <link>jyotishp.github.io/tutorials/kernel-development/introduction-to-kernel-development</link>
@@ -30,7 +30,7 @@
 	Most of the Linux distributions now-a-days include support for the UEFI Secure Boot feature, which means that these Linux distributions can be installed and run on systems where UEFI Secure Boot is enabled. When Secure Boot is enabled, the EFI operating system boot loaders, the Linux kernel, and all kernel modules must be signed with a private key and authenticated with the corresponding public key. Note that not all UEFI-based systems include support for Secure Boot.
 &lt;/p&gt;
 &lt;p&gt;
-	The information provided in this article describes steps necessary to self-sign your privately built kernel modules on UEFI-based systems where Secure Boot is enabled. If you are interested to know more about UEFI, here&#39;s the link to &lt;a href=&quot;https://en.wikipedia.org/wiki/Unified_Extensible_Firmware_Interface&quot; target=&quot;_blank&quot;&gt;Wikipedia page&lt;/a&gt;.
+	The information provided in this article describes steps necessary to self-sign your privately built kernel modules on UEFI-based systems where Secure Boot is enabled. If you are interested to know more about UEFI, here's the link to &lt;a href=&quot;https://en.wikipedia.org/wiki/Unified_Extensible_Firmware_Interface&quot; target=&quot;_blank&quot;&gt;Wikipedia page&lt;/a&gt;.
 &lt;/p&gt;
 &lt;h2&gt;Generating Self-Signed Key Pair&lt;/h2&gt;
 &lt;p&gt;
@@ -41,7 +41,7 @@
 &lt;/p&gt;
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;openssl req -x509 -new -nodes -utf8 -sha256 -days 36500 -outform DER -out public_key.der -keyout private_key.priv&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;
-	Now, you will be prompted to enter your country code. Next &lt;i&gt;State/Province name&lt;/i&gt; followed by &lt;i&gt;City, Organization Name, Unit Name&lt;/i&gt; and &lt;i&gt;Common Name&lt;/i&gt;. Next fill your &lt;i&gt;email address&lt;/i&gt; at the prompt. Now, you have sucessfully generated your public and private keys. The above command creates a public and private key pair with &lt;code&gt;utf-8&lt;/code&gt; encoding, using &lt;code&gt;sha256&lt;/code&gt; encryption valid for 10 years. Check for &lt;i&gt;public_key.der&lt;/i&gt; and &lt;i&gt;private_key.priv&lt;/i&gt; files in the current directory. If you can&#39;t find them, you did something wrong. Repeat the process.
+	Now, you will be prompted to enter your country code. Next &lt;i&gt;State/Province name&lt;/i&gt; followed by &lt;i&gt;City, Organization Name, Unit Name&lt;/i&gt; and &lt;i&gt;Common Name&lt;/i&gt;. Next fill your &lt;i&gt;email address&lt;/i&gt; at the prompt. Now, you have sucessfully generated your public and private keys. The above command creates a public and private key pair with &lt;code&gt;utf-8&lt;/code&gt; encoding, using &lt;code&gt;sha256&lt;/code&gt; encryption valid for 10 years. Check for &lt;i&gt;public_key.der&lt;/i&gt; and &lt;i&gt;private_key.priv&lt;/i&gt; files in the current directory. If you can't find them, you did something wrong. Repeat the process.
 &lt;/p&gt;
 &lt;h2&gt;Adding your self-signed public key to MOK list&lt;/h2&gt;
 &lt;p&gt;

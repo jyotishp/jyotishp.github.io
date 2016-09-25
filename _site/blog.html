@@ -29,10 +29,85 @@
 				<a href="/blog" class="item active"><span class="icon-quill"></span><br>Blog</a>
 			
 		</nav>
+		<div class="background"></div>
 		<div class="wrapper">
-			<h1 class="logo">Jyotish Poonganam</h1>
-			<p class="intro">Coming Soon!<span class="blink">&vert;</span></p>
+			<div class="side-bar">
+				<h2>Categories</h2>
+				<span class="side-bar-button icon-menu" onclick="toggle_side_bar()"></span>
+				<ul>
+				
+					<!--  -->
+						
+							<li><a href="#tutorials">Tutorials</a></li>
+						
+							<li><a href="#kernel-development">Kernel-development</a></li>
+						
+					
+				
+				</ul>
+			</div>
+
+		
+			<h2 id="tutorials"><span class="icon-books"></span>Tutorials</h2>
+			<ul class="posts">
+			
+				
+					
+						
+							<li><a href="//jyotishp.github.io/tutorials/kernel-development/introduction-to-kernel-development">Easy Introduction to Kernel Development<br><br>
+							<time datetime="2016-07-06T18:00:00+05:30" itemprop="datePublished"><span class="icon-quill"></span> July 06, 2016</time></a></li>
+						
+					
+				
+					
+						
+							<li><a href="//jyotishp.github.io/tutorials/kernel-development/signing-kernel-modules-for-uefi-secure-boot-systems">Signing kernel modules for UEFI secure boot systems<br><br>
+							<time datetime="2016-07-05T18:00:00+05:30" itemprop="datePublished"><span class="icon-quill"></span> July 05, 2016</time></a></li>
+						
+					
+				
+			
+			
+			</ul>
+		
+			<h2 id="kernel-development"><span class="icon-books"></span>Kernel-development</h2>
+			<ul class="posts">
+			
+				
+					
+						
+							<li><a href="//jyotishp.github.io/tutorials/kernel-development/introduction-to-kernel-development">Easy Introduction to Kernel Development<br><br>
+							<time datetime="2016-07-06T18:00:00+05:30" itemprop="datePublished"><span class="icon-quill"></span> July 06, 2016</time></a></li>
+						
+					
+				
+					
+						
+							<li><a href="//jyotishp.github.io/tutorials/kernel-development/signing-kernel-modules-for-uefi-secure-boot-systems">Signing kernel modules for UEFI secure boot systems<br><br>
+							<time datetime="2016-07-05T18:00:00+05:30" itemprop="datePublished"><span class="icon-quill"></span> July 05, 2016</time></a></li>
+						
+					
+				
+			
+			
+			</ul>
+		
 		</div>
+		<script type="text/javascript">
+			function toggle_side_bar() {
+				var sidebar = document.getElementsByClassName('side-bar')[0];
+				// console.log(sidebar.childNodes[3].className);
+				if (!sidebar.className.match(/(?:^|\s)active(?!\S)/)) {
+					sidebar.className += " active";
+					sidebar.childNodes[3].className = 'side-bar-button icon-cross';
+				}
+				else {
+					var sidebar = document.getElementsByClassName('side-bar')[0];
+					sidebar.className = document.getElementsByClassName("side-bar")[0].className.replace( /(?:^|\s)active(?!\S)/g , '' );
+					sidebar.childNodes[3].className = 'side-bar-button icon-menu';
+				}
+			}
+		</script>
 	<footer>
 		<a href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank"><span class="icon-creative-commons"></span> 
 		<span class="icon-creative-commons-noncommercial-us"></span> 
