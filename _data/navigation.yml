@@ -1,3 +1,5 @@
+# - text: <span class="icon-file-pdf"></span><br>Resume
+#   url: /resume.pdf
 - text: <span class="icon-home"></span><br>Home
   url: /
 - text: <span class="icon-briefcase"></span><br>Projects
@@ -6,3 +8,4 @@
   url: /about-me
 - text: <span class="icon-quill"></span><br>Blog
   url: /blog
+  

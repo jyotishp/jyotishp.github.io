@@ -4,25 +4,11 @@
     <title>Jyotish Poonganam</title>
     <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
 </description>
-    <link>http://0.0.0.0:4000/</link>
-    <atom:link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 16 Feb 2017 15:38:15 +0530</pubDate>
-    <lastBuildDate>Thu, 16 Feb 2017 15:38:15 +0530</lastBuildDate>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 13 Jun 2017 15:11:59 +0530</pubDate>
+    <lastBuildDate>Tue, 13 Jun 2017 15:11:59 +0530</lastBuildDate>
     <generator>Jekyll v3.4.0</generator>
-    
-      <item>
-        <title>Easy Introduction to Kernel Development</title>
-        <description></description>
-        <pubDate>Wed, 06 Jul 2016 18:00:00 +0530</pubDate>
-        <link>http://0.0.0.0:4000/tutorials/kernel-development/introduction-to-kernel-development</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/tutorials/kernel-development/introduction-to-kernel-development</guid>
-        
-        
-        <category>tutorials</category>
-        
-        <category>kernel-development</category>
-        
-      </item>
     
       <item>
         <title>Signing kernel modules for UEFI secure boot systems</title>
@@ -60,8 +46,8 @@
 	Congratulations! You have a self-signed kernel module. You can insert it using modprobe or insmod.
 &lt;/p&gt;</description>
         <pubDate>Tue, 05 Jul 2016 18:00:00 +0530</pubDate>
-        <link>http://0.0.0.0:4000/tutorials/kernel-development/signing-kernel-modules-for-uefi-secure-boot-systems</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/tutorials/kernel-development/signing-kernel-modules-for-uefi-secure-boot-systems</guid>
+        <link>http://localhost:4000/tutorials/kernel-development/signing-kernel-modules-for-uefi-secure-boot-systems</link>
+        <guid isPermaLink="true">http://localhost:4000/tutorials/kernel-development/signing-kernel-modules-for-uefi-secure-boot-systems</guid>
         
         
         <category>tutorials</category>
