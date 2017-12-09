@@ -4,7 +4,7 @@ title: Setting up balancer for content delivery using Nginx/HAproxy
 topic: Load Balancers
 type: Tutorials
 categories: tutorials load-balancer CDN
-date: 2017-12-09 18:00:00
+date: 2017-12-09 15:00:00
 banner: balancer.jpg
 ---
 <!-- A load balancer acts as the “traffic cop” sitting in front of your servers and routing client requests across all servers capable of fulfilling those requests in a manner that maximizes speed and capacity utilization and ensures that no one server is overworked, which could degrade performance. If a single server goes down, the load balancer redirects traffic to the remaining online servers. When a new server is added to the server group, the load balancer automatically starts to send requests to it.
@@ -18,11 +18,8 @@ Proxypass can be implemented using HAproxy or Nginx. We prefer Nginx as it has m
 
 ## Setting up Proxypass server (Using HAproxy)
 This will have your public IP that has 100% uptime, `123.123.1.10`.
-Use the following configuration
-{% highlight apache %}
-/etc/haproxy/haproxy.cfg
-________________________
-
+In `/etc/haproxy/haproxy.cfg` set the `global` and `default` parameters. If you are unsure of setting some parameters, refer HAproxy documentation.
+{% highlight conf %}
 global
     log         /dev/log local0
     log         /dev/log local1 notice
@@ -36,9 +33,9 @@ global
     ca-base /etc/ssl/certs
     crt-base /etc/ssl/private
     tune.ssl.default-dh-param 2048
-    ssl-default-bind-ciphers ...
+    ssl-default-bind-ciphers ... # Add required ciphers
     ssl-default-bind-options no-sslv3 no-tls-tickets
-    ssl-default-server-ciphers ...
+    ssl-default-server-ciphers ... # Add required ciphers
     ssl-default-server-options no-sslv3 no-tls-tickets
 
 defaults
@@ -58,19 +55,29 @@ defaults
     timeout http-keep-alive 10s
     timeout check           10s
     maxconn                 3000
+{% endhighlight %}
 
+Now, let us define a frontend for all domains on `http` protocol. Our goal is to serve all the resources of the website through high uptime IP except the large, static files that are usually not important to be served through this IP. To achieve this, we can use regular expressions or use HAproxy's out of box features like `path_end` to detect these file URLs and then redirect the end user to CDN domain.
+{% highlight conf %}
 frontend http_frontend
     bind *:80
     mode http
 
+    # Detect static files and redirect them through CDN
     acl     datasets_url    path_end -i .zip .tar .xz .bz .gz .rar .bz2 .7z
     http-request redirect location https://cdn.example.com/static/%[req.hdr(host)]%[path] if datasets_url
+
     acl host_site1.example.com hdr(host) site1.example.com
     acl host_site2.example.com hdr(host) site2.example.com
+
     use_backend site1.example.com_http if host_site1.example.com
     use_backend site2.example.com_http if host_site2.example.com
+    
     default_backend fallback_backend
+{% endhighlight %}
 
+Similarly, we can define the frontend for `https`.
+{% highlight conf %}
 frontend https_frontend
     bind *:443 ssl crt /etc/ssl/private/example.com.pem
     mode http
@@ -84,7 +91,10 @@ frontend https_frontend
     use_backend site1.example.com_http if host_site1.example.com
     use_backend site2.example.com_http if host_site2.example.com
     default_backend fallback_backend
+{% endhighlight %}
 
+For the backend part, it's pretty straight forward.
+{% highlight conf %}
 backend fallback_backend
     mode http
     server fallback_backend_01 127.0.0.1:8080 check
@@ -106,11 +116,10 @@ backend site1.example.com_https
 backend site2.example.com_https
     mode http
     server site2.example.com_01 site2_intranet1.example.com:443 check ssl verify none
-
 {% endhighlight %}
 
 ## Setting up Proxypass server (Using Nginx)
-Skip this step if you are using HAproxy. This will have your public IP that has 100% uptime, `123.123.1.10`.
+Skip this step if you are using HAproxy. This will have your public IP that has 100% uptime, `123.123.1.10`. First, let us setup the global parameters for nginx. Most the parameters are stright forward but if you are not sure what these options do, refer the nginx documentation.
 {% highlight nginx %}
 user nginx;
 worker_processes auto;
@@ -122,8 +131,12 @@ include /usr/share/nginx/modules/*.conf;
 events {
     worker_connections 3000;
 }
+{% endhighlight %}
 
+Nginx, unlike HAproxy, times out at 60 seconds as per the default configuration. So, we need to change the default timeout options. So, at the end your `/etc/nginx/nginx.conf` should also contain some options like these:
+{% highlight nginx %}
 http {
+    # Make logs a bit more useful :P
     log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
                       '$status $body_bytes_sent "$http_referer" '
                       '"$http_user_agent" "$http_x_forwarded_for"';
@@ -147,11 +160,8 @@ http {
     include /etc/nginx/conf.d/*.conf;
 {% endhighlight %}
 
-Now, we will specify the configuration required for our websites in `/etc/nginx/conf.d/` directory. Below is a template for reference.
+Now, we will specify the configuration required for our websites in `/etc/nginx/conf.d/` directory. It would be easier to manage the domains if each takes a separate config file (I feel so. But you can do whatever you are comfortable with). This is also where we will detect the file URLs that should be served through CDN IP and return appropriate redirects. Below is a template for reference, `/etc/nginx/conf.d/site1.example.com.conf`.
 {% highlight nginx %}
-/etc/nginx/conf.d/site1.example.com
-___________________________________
-
 server {
         listen 80;
         listen [::]:80;
@@ -193,7 +203,6 @@ server {
         }
 }
 {% endhighlight %}
-Use this template for rest of the domains you want to set.
 
 ## Setting up CDN server (Using Nginx)
 This will have the public IP that has higher bandwidth, `123.123.2.20`.
@@ -201,12 +210,9 @@ You can use HAproxy even for this part. But I'll be sticking to Nginx for the fo
 - At the time I'm writing this, the latest Centos release supports HAproxy 1.5 which doesn't give much freedom with regular expressions and variables (Though HAproxy 1.6+ supports what I exactly want, I want to avoid it untill it is updated through official repositories).
 - HAproxy configuration is a pain to manage for large number of websites.
 
-The following configuration points the CDN to fetch resources from the proxypass server we have set above. This will make sure that there is a sngle point entry for all the websites we handle (A friend of mine suggested this :satisfied: and it's a great idea).
+The following configuration points the CDN to fetch resources from the proxypass server we have set above. This will make sure that there is a sngle point entry for all the websites we handle (A friend of mine suggested this :satisfied: and it's a great idea). Since we are essentially serving whatever our proxy pass server serves, anyone can access any page that served through proxy pass server on CDN as well. There is a possibility of having links to pages like `/contact` and similar ones that we might have on CDN as well. It's not that good if people end up reaching CDN contact page when they click someother domains contact page link (though this wouldn't happen unless someone specifically tries to access things this way). We can add few more regex rules to handles these cases as well. At the end of the day, your nginx configuration should look more or less like:
 
 {% highlight nginx %}
-/etc/nginx/nginx.conf
-_____________________
-
 user nginx;
 worker_processes auto;
 error_log /var/log/nginx/error.log;
@@ -267,7 +273,7 @@ http {
             proxy_set_header Host $intranet_host;
             proxy_redirect off;
             proxy_set_header X-Forwarded-Proto $scheme;
-            proxy_pass https://proxypass.example.com/$intranet_path; # Or intranet IP
+            proxy_pass https://proxypass.example.com/$intranet_path;
         }
 
         error_page 404 /404.html;
