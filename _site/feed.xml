@@ -4,11 +4,11 @@
     <title>Jyotish Poonganam</title>
     <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
 </description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 13 Jun 2017 15:11:59 +0530</pubDate>
-    <lastBuildDate>Tue, 13 Jun 2017 15:11:59 +0530</lastBuildDate>
-    <generator>Jekyll v3.4.0</generator>
+    <link>http://0.0.0.0:4000/</link>
+    <atom:link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sat, 09 Dec 2017 18:19:07 +0530</pubDate>
+    <lastBuildDate>Sat, 09 Dec 2017 18:19:07 +0530</lastBuildDate>
+    <generator>Jekyll v3.6.2</generator>
     
       <item>
         <title>Signing kernel modules for UEFI secure boot systems</title>
@@ -25,7 +25,7 @@
 &lt;p&gt;
 	Now, open your terminal and head to the folder where you wish to save the generated key pair. Now, using &lt;code&gt;openssl&lt;/code&gt;, generate the public and private key pair.
 &lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;openssl req -x509 -new -nodes -utf8 -sha256 -days 36500 -outform DER -out public_key.der -keyout private_key.priv&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;openssl req &lt;span class=&quot;nt&quot;&gt;-x509&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-new&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-nodes&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-utf8&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-sha256&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-days&lt;/span&gt; 36500 &lt;span class=&quot;nt&quot;&gt;-outform&lt;/span&gt; DER &lt;span class=&quot;nt&quot;&gt;-out&lt;/span&gt; public_key.der &lt;span class=&quot;nt&quot;&gt;-keyout&lt;/span&gt; private_key.priv&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;
 	Now, you will be prompted to enter your country code. Next &lt;i&gt;State/Province name&lt;/i&gt; followed by &lt;i&gt;City, Organization Name, Unit Name&lt;/i&gt; and &lt;i&gt;Common Name&lt;/i&gt;. Next fill your &lt;i&gt;email address&lt;/i&gt; at the prompt. Now, you have sucessfully generated your public and private keys. The above command creates a public and private key pair with &lt;code&gt;utf-8&lt;/code&gt; encoding, using &lt;code&gt;sha256&lt;/code&gt; encryption valid for 10 years. Check for &lt;i&gt;public_key.der&lt;/i&gt; and &lt;i&gt;private_key.priv&lt;/i&gt; files in the current directory. If you can't find them, you did something wrong. Repeat the process.
 &lt;/p&gt;
@@ -33,7 +33,7 @@
 &lt;p&gt;
 	Next, we need to add this key to your Machine Owner Keys (MOK) list. We will use &lt;code&gt;mokutil&lt;/code&gt; to do this.
 &lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo mokutil --import public_key.der&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;mokutil &lt;span class=&quot;nt&quot;&gt;--import&lt;/span&gt; public_key.der&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;
 	You will be asked to enter a password. Give any password you like. Now, reboot your machine. You should get a prompt asking if you want to continue adding key to your MOK list. These prompts slightly vary depending upon your firmware. You will be prompted to enter the passphrase you defined earlier while importing the key using &lt;code&gt;mokutil&lt;/code&gt;. Enter it. Done! You have successfully added a self-signed public key to your MOK list.
 &lt;/p&gt;
@@ -41,13 +41,13 @@
 &lt;p&gt;
 	Now, you need to sign your kernel module. To do it, type the following in your terminal
 &lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;/usr/src/&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;uname -r&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;/scripts/sign-file sha256 private_key.priv public_key.der your_module.ko&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;/usr/src/&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;uname &lt;span class=&quot;nt&quot;&gt;-r&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;/scripts/sign-file sha256 private_key.priv public_key.der your_module.ko&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;
 	Congratulations! You have a self-signed kernel module. You can insert it using modprobe or insmod.
 &lt;/p&gt;</description>
         <pubDate>Tue, 05 Jul 2016 18:00:00 +0530</pubDate>
-        <link>http://localhost:4000/tutorials/kernel-development/signing-kernel-modules-for-uefi-secure-boot-systems</link>
-        <guid isPermaLink="true">http://localhost:4000/tutorials/kernel-development/signing-kernel-modules-for-uefi-secure-boot-systems</guid>
+        <link>http://0.0.0.0:4000/tutorials/kernel-development/signing-kernel-modules-for-uefi-secure-boot-systems</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/tutorials/kernel-development/signing-kernel-modules-for-uefi-secure-boot-systems</guid>
         
         
         <category>tutorials</category>

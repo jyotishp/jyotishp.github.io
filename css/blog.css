@@ -4,6 +4,10 @@ html {
 	background: #f8f7f3;
 }
 
+code, pre {
+	font-family: monaco, monospace;
+}
+
 body {
 	font-size: 1em;
 }
@@ -127,14 +131,22 @@ nav {
 	border-radius: 4px;
 }
 
-.content p {
+.content p, .content ul > li {
 	padding: 5px 26px;
 	line-height: 1.6;
+	text-align: justify;
 }
 
 .content img {
 	width: 100%;
 	height: auto;
+}
+
+.content .emoji {
+	width: 20px;
+	height: 20px;
+	position: relative;
+	bottom: -4px;
 }
 
 .cat {
@@ -214,7 +226,7 @@ footer [class^="icon-"], footer [class*=" icon-"] {
 
 @media only screen and (min-width:900px) {
 	body {
-		font-size: 1.2em;
+		font-size: 1.1em;
 	}
 
 	.logo {
