@@ -9,7 +9,7 @@
 title: Jyotish P
 email: jyotish@myself.com
 description: > # this means to ignore newlines until "baseurl:"
-  Jyotish P - Ops / Dev / Network / Part-time Code Magician.
+  Jyotish P - A Machine Learning enthusiast and a part time SysAdmin.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "jyotishp.github.io" # the base hostname & protocol for your site
 
