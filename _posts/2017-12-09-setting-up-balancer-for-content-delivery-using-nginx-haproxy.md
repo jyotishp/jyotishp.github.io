@@ -17,6 +17,7 @@ In this tutorial, I'll be assuming that you have two public IPs, say `123.123.1.
 Proxypass can be implemented using HAproxy or Nginx. We prefer Nginx as it has more intuitive configuration (and saves a lot of pain as the configuration can be split into multiple files unlike HAproxy which doesn't support include directive).
 
 ## Setting up Proxypass server (Using HAproxy)
+This will have your public IP that has 100% uptime, `123.123.1.10`.
 Use the following configuration
 {% highlight apache %}
 /etc/haproxy/haproxy.cfg
@@ -109,7 +110,7 @@ backend site2.example.com_https
 {% endhighlight %}
 
 ## Setting up Proxypass server (Using Nginx)
-Skip this step if you are using HAproxy.
+Skip this step if you are using HAproxy. This will have your public IP that has 100% uptime, `123.123.1.10`.
 {% highlight nginx %}
 user nginx;
 worker_processes auto;
@@ -195,6 +196,7 @@ server {
 Use this template for rest of the domains you want to set.
 
 ## Setting up CDN server (Using Nginx)
+This will have the public IP that has higher bandwidth, `123.123.2.20`.
 You can use HAproxy even for this part. But I'll be sticking to Nginx for the following reasons
 - At the time I'm writing this, the latest Centos release supports HAproxy 1.5 which doesn't give much freedom with regular expressions and variables (Though HAproxy 1.6+ supports what I exactly want, I want to avoid it untill it is updated through official repositories).
 - HAproxy configuration is a pain to manage for large number of websites.
@@ -279,3 +281,6 @@ http {
 
 }
 {% endhighlight %}
+
+## Conclusion
+Your sites, `site1.example.com` and `site2.example.com`, will be served through the IP with maximum uptime (Proxypass server) and contents that are not too much important (some downloads or datasets) will be served on IP that has higher bandwidth (CDN server).
