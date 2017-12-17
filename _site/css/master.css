@@ -440,6 +440,14 @@ Modules - reusable parts of our design
   background: #6b6f75;
 }
 
+.cd-timeline-content > h2 > a {
+  color: #303e49;
+  transition: 0.1s ease-out color;
+}
+.cd-timeline-content > h2 > a:hover, {
+  color: #C65D5D;
+}
+
 .timeline span.icon-embed2 {
     position: absolute;
     top: 8px;
@@ -708,6 +716,9 @@ Modules - reusable parts of our design
     top: 6px;
 /*    font-size: 16px;
     font-size: 1rem;*/
+  }
+  .cd-timeline-content .cd-url {
+    margin-top: 27px;
   }
   .cd-timeline-block:nth-child(even) .cd-timeline-content {
     float: right;

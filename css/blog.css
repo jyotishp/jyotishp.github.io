@@ -229,6 +229,10 @@ footer [class^="icon-"], footer [class*=" icon-"] {
 		font-size: 1.1em;
 	}
 
+	.banner h1 {
+		font-size: 2.2em;
+	}
+
 	.logo {
 		margin: 7px 10vw;
 	}

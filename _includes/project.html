@@ -1,0 +1,22 @@
+{% for project in site.data.projects %}
+	<div class="cd-timeline-block">
+		<div class="cd-timeline-img cd-{% if project.type == 'coding' %}red{% elsif project.type == 'hardware' %}green{% elsif project.type == 'embed' %}yellow{% endif %}">
+			<!-- <img src="img/cd-icon-picture.svg" alt="Picture"> -->
+			<span class="icon-{% if project.type == 'coding' %}embed2{% else %}microchip{% endif %}"></span>
+		</div>
+
+		<div class="cd-timeline-content">
+			<h2><a href="{{ project.url }}">{{ project.title }}</a></h2>
+			<p>
+				{{ project.summary_head }}
+				<ul>
+					{% for item in project.summary %}
+					<li>{{ item }}</li>
+					{% endfor %}
+				</ul>
+			</p>
+			<span class="cd-date">{{ project.date }}</span>
+			<a href="{{ project.url }}" class="cd-date cd-url">View project</a>
+		</div>
+	</div>
+{% endfor %}

@@ -1,0 +1,49 @@
+- title: Image Captioning
+  url: https://nueral-captioning.jyotishp.ml
+  type: coding
+  date: November 2017 - December 2017
+  summary:
+    - Solution using an attention based translation model
+    - Used CNN to encode images and LSTM to decode image features
+
+# - title: cDocket
+#   url: https://cdocket.com
+#   type: coding
+#   date: December 2016 - Ongoing
+#   summary:
+#     - Built using Laravel
+#     - Two levels of authentication system with eight role
+#     - Start-up for digitalizing tender management
+
+- title: Cooperative Modular Explorer Robot
+  url: javascript:void()
+  type: hardware
+  date: November 2016 - March 2017
+  summary:
+    - Part of Texas Instruments Analog Design Challenge
+    - Designed and implemented power supply units for the robot
+
+- title: Robot to cross craters
+  url: javascript:void()
+  type: embed
+  date: October 2016 - March 2017
+  summary:
+    - Part of eYantra competition
+    - Targets at filling the craters on its way with neighbouring boulders
+    - Detection of boulders and craters is done using a camera
+
+- title: Online DC UPS
+  url: javascript:void()
+  type: hardware
+  date: January - April, 2015
+  summary:
+    - Part of coursework for Power Electronics
+
+- title: Digital Thermometer
+  url: javascript:void()
+  type: hardware
+  date: August - November, 2015
+  summary:
+    - Simple thermoter based on thermistor
+      - LEDs are used for temperature measurement
+      - Part of coursework for Instrumentation
