@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?fuvioe');
-  src:  url('fonts/icomoon.eot?fuvioe#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?fuvioe') format('truetype'),
-    url('fonts/icomoon.woff?fuvioe') format('woff'),
-    url('fonts/icomoon.svg?fuvioe#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?8mnbxo');
+  src:  url('fonts/icomoon.eot?8mnbxo#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?8mnbxo') format('truetype'),
+    url('fonts/icomoon.woff?8mnbxo') format('woff'),
+    url('fonts/icomoon.svg?8mnbxo#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -32,12 +32,6 @@
 }
 .icon-creative-commons:before {
   content: "\e902";
-}
-.icon-bitbucket:before {
-  content: "\e903";
-}
-.icon-microchip:before {
-  content: "\e904";
 }
 .icon-home:before {
   content: "\e905";
@@ -69,9 +63,6 @@
 .icon-share2:before {
   content: "\ea82";
 }
-.icon-facebook2:before {
-  content: "\ea91";
-}
 .icon-github:before {
   content: "\eab0";
 }
@@ -81,4 +72,6 @@
 .icon-file-pdf:before {
   content: "\eadf";
 }
-
+.icon-microchip:before {
+  content: "\e904";
+}
