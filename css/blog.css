@@ -1,15 +1,15 @@
 html {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Source Sans Pro', sans-serif;
 	padding-top: 60px;
 	background: #f8f7f3;
 }
 
 code, pre {
-	font-family: monaco, monospace;
+	font-family: monaco, 'Ubuntu Mono', Menlo, monospace;
 }
 
 body {
-	font-size: 1em;
+	font-size: 1.2em;
 }
 
 a {
@@ -29,6 +29,20 @@ nav {
 	z-index: 100;
 	right: 0;
 	background: rgba(34, 34, 34, 0.93);
+}
+
+blockquote {
+	border-left: 4px solid #c65d5d;
+	background-color: #fcf0de;
+	padding: 1px;
+}
+
+blockquote ul {
+	margin-top: -15px;
+}
+
+blockquote ul > li {
+	padding-left: 0 !important;
 }
 
 .logo {
@@ -75,7 +89,7 @@ nav {
 	position: relative;
 	overflow: hidden;
 	background-color: #333;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Source Sans Pro', sans-serif;
 	height: 63vh;
 }
 
@@ -101,7 +115,7 @@ nav {
 
 .date, .topic {
 	display: none;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Source Sans Pro', sans-serif;
 }
 
 .topic p {
@@ -118,12 +132,20 @@ nav {
 }
 
 .content h2 {
+	font-size: 2em;
+	margin-bottom: 1px;
 	color: #C65D5D;
 	padding: 0px 25px;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Source Sans Pro', sans-serif;
 }
 
-.content p > code {
+.content h3 {
+	margin-bottom: -10px;
+	padding: 0px 25px;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+.content p > code, blockquote code {
 	background-color: #343642;
 	color: #ddd;
 	padding: 3px;
@@ -163,7 +185,7 @@ nav {
 }
 
 .cat span {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Source Sans Pro', sans-serif;
 	font-weight: normal;
 }
 
@@ -226,11 +248,11 @@ footer [class^="icon-"], footer [class*=" icon-"] {
 
 @media only screen and (min-width:900px) {
 	body {
-		font-size: 1.1em;
+		font-size: 1.2em;
 	}
 
 	.banner h1 {
-		font-size: 2.2em;
+		font-size: 2.3em;
 	}
 
 	.logo {
@@ -253,6 +275,7 @@ footer [class^="icon-"], footer [class*=" icon-"] {
 
 	.date {
 		display: block;
+		font-size: 1.2em;
 		position: absolute;
 		font-weight: lighter;
 		background-color: #f8f7f3;

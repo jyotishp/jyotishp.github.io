@@ -45,5 +45,5 @@
   date: August - November, 2015
   summary:
     - Simple thermoter based on thermistor
-      - LEDs are used for temperature measurement
-      - Part of coursework for Instrumentation
+    - LEDs are used for temperature measurement
+    - Part of coursework for Instrumentation
