@@ -4,6 +4,7 @@ title: Load balancing with multiple public IPs using Nginx
 topic: Load Balancers
 type: Tutorials
 categories: tutorials load-balancer nginx
+tags: tutorial, nginx, sysadmin, load balancer, cdn, reverse proxy, proxy_pass, axfr
 date: 2017-12-23 21:30:00
 banner: load-balance.svg
 ---

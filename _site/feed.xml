@@ -6,8 +6,8 @@
 </description>
     <link>http://0.0.0.0:4000/</link>
     <atom:link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 24 Dec 2017 12:12:25 +0530</pubDate>
-    <lastBuildDate>Sun, 24 Dec 2017 12:12:25 +0530</lastBuildDate>
+    <pubDate>Sun, 24 Dec 2017 16:48:51 +0530</pubDate>
+    <lastBuildDate>Sun, 24 Dec 2017 16:48:51 +0530</lastBuildDate>
     <generator>Jekyll v3.6.2</generator>
     
       <item>
@@ -251,6 +251,26 @@
         <link>http://0.0.0.0:4000/tutorials/load-balancer/nginx/reverse-proxy-load-balancing-with-multiple-public-ips-using-nginx</link>
         <guid isPermaLink="true">http://0.0.0.0:4000/tutorials/load-balancer/nginx/reverse-proxy-load-balancing-with-multiple-public-ips-using-nginx</guid>
         
+        <category>tutorial,</category>
+        
+        <category>nginx,</category>
+        
+        <category>sysadmin,</category>
+        
+        <category>load</category>
+        
+        <category>balancer,</category>
+        
+        <category>cdn,</category>
+        
+        <category>reverse</category>
+        
+        <category>proxy,</category>
+        
+        <category>proxy_pass,</category>
+        
+        <category>axfr</category>
+        
         
         <category>tutorials</category>
         
@@ -298,6 +318,18 @@
         <pubDate>Tue, 05 Jul 2016 18:00:00 +0530</pubDate>
         <link>http://0.0.0.0:4000/tutorials/kernel-development/signing-kernel-modules-for-uefi-secure-boot-systems</link>
         <guid isPermaLink="true">http://0.0.0.0:4000/tutorials/kernel-development/signing-kernel-modules-for-uefi-secure-boot-systems</guid>
+        
+        <category>tutorial,</category>
+        
+        <category>linux,</category>
+        
+        <category>kernel,</category>
+        
+        <category>uefi,</category>
+        
+        <category>secure</category>
+        
+        <category>boot</category>
         
         
         <category>tutorials</category>
