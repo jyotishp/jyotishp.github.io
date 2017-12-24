@@ -5,7 +5,7 @@ topic: Load Balancers
 type: Tutorials
 categories: tutorials load-balancer nginx
 date: 2017-12-23 21:30:00
-banner: balancer.jpg
+banner: load-balance.svg
 ---
 The link on which our websites are hosted has a very limited bandwidth (but never goes down). We host a lot of research papers, project videos and a lot of datasets on our websites that are delivered through this high availability link. But serving such heavy content on a limited bandwidth link will lead to horrible browsing experiences and eventually a downtime. The good thing is, we also have a high bandwidth link (but not reliable :disappointed:). I was asked to setup a reverse proxy on this link to deliver heavy content so that all our hosted websites can live happily.
 
