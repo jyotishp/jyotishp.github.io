@@ -115,7 +115,7 @@ server {
     # Else, serve as a reverse proxy for requests from intranet IPs
     location ~* \.(zip|gz|tar|bz|rar|7z|xz|pdf|mp4|avi|mov|webm|wmv)$ {
         if ($external_ip) {
-            return 301 http://cdn.iiit.ac.in/cdn/dummy.iiit.ac.in$request_uri;
+            return 302 http://cdn.iiit.ac.in/cdn/dummy.iiit.ac.in$request_uri;
         }
         proxy_pass http://dummy.iiit.ac.in;
     }
@@ -151,7 +151,7 @@ server {
 
     location ~* \.(zip|gz|tar|bz|rar|7z|xz|pdf|mp4|avi|mov|webm|wmv)$ {
         if ($external_ip) {
-            return 301 https://cdn.iiit.ac.in/cdn/dummy.iiit.ac.in$request_uri;
+            return 302 https://cdn.iiit.ac.in/cdn/dummy.iiit.ac.in$request_uri;
         }
         proxy_pass https://dummy.iiit.ac.in;
     }
@@ -172,7 +172,7 @@ The Nginx configuration for CDN is fairly straight forward. We'll need only sing
 {% highlight html %}
 http://dummy.iiit.ac.in/some_path/some_big_file.zip
 {% endhighlight %}
-it gets `301` redirect to 
+it gets `302` redirect to 
 {% highlight html %}
 http://cdn.iiit.ac.in/cdn/dummy.iiit.ac.in/some_path/some_big_file.zip
 {% endhighlight %}
