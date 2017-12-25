@@ -125,6 +125,23 @@ blockquote ul > li {
 	font-style: italic;
 }
 
+.comments-box {
+	border-top: 2px solid #C65D5D;
+	position: absolute;
+	font-weight: lighter;
+	background-color: #f8f7f3;
+	padding: 20px;
+	left: -20vw;
+	top: 180px;
+	box-sizing: border-box;
+	width: 18vw;
+	border-radius: 0 0 10px 10px;
+}
+
+.footer-comments-box {
+	padding: 15px;
+}
+
 .content {
 	background-color: #f8f7f3;
 /*	color: #424951;

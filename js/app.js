@@ -6,3 +6,5 @@ var headroom  = new Headroom(myElement, {
 });
 // initialise
 headroom.init(); 
+
+// var sidebar = new stickySidebar('.comments-box', {topSpacing: 20});

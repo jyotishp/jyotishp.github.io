@@ -6,8 +6,8 @@
 </description>
     <link>http://0.0.0.0:4000/</link>
     <atom:link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 24 Dec 2017 16:48:51 +0530</pubDate>
-    <lastBuildDate>Sun, 24 Dec 2017 16:48:51 +0530</lastBuildDate>
+    <pubDate>Mon, 25 Dec 2017 21:25:20 +0530</pubDate>
+    <lastBuildDate>Mon, 25 Dec 2017 21:25:20 +0530</lastBuildDate>
     <generator>Jekyll v3.6.2</generator>
     
       <item>
@@ -166,11 +166,11 @@
 
 &lt;p&gt;The Nginx configuration for CDN is fairly straight forward. We’ll need only single (or two if looking for separate SSL one) server block. Before we proceed, let’s revise what we want to do. We have some files that we want our CDN to serve. For example, if the client requests for&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;http://dummy.iiit.ac.in/some_path/some_big_file.zip&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-conf&quot; data-lang=&quot;conf&quot;&gt;&lt;span class=&quot;n&quot;&gt;http&lt;/span&gt;://&lt;span class=&quot;n&quot;&gt;dummy&lt;/span&gt;.&lt;span class=&quot;n&quot;&gt;iiit&lt;/span&gt;.&lt;span class=&quot;n&quot;&gt;ac&lt;/span&gt;.&lt;span class=&quot;n&quot;&gt;in&lt;/span&gt;/&lt;span class=&quot;n&quot;&gt;some_path&lt;/span&gt;/&lt;span class=&quot;n&quot;&gt;some_big_file&lt;/span&gt;.&lt;span class=&quot;n&quot;&gt;zip&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;it gets &lt;code class=&quot;highlighter-rouge&quot;&gt;301&lt;/code&gt; redirect to&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;http://cdn.iiit.ac.in/cdn/dummy.iiit.ac.in/some_path/some_big_file.zip&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-conf&quot; data-lang=&quot;conf&quot;&gt;&lt;span class=&quot;n&quot;&gt;http&lt;/span&gt;://&lt;span class=&quot;n&quot;&gt;cdn&lt;/span&gt;.&lt;span class=&quot;n&quot;&gt;iiit&lt;/span&gt;.&lt;span class=&quot;n&quot;&gt;ac&lt;/span&gt;.&lt;span class=&quot;n&quot;&gt;in&lt;/span&gt;/&lt;span class=&quot;n&quot;&gt;cdn&lt;/span&gt;/&lt;span class=&quot;n&quot;&gt;dummy&lt;/span&gt;.&lt;span class=&quot;n&quot;&gt;iiit&lt;/span&gt;.&lt;span class=&quot;n&quot;&gt;ac&lt;/span&gt;.&lt;span class=&quot;n&quot;&gt;in&lt;/span&gt;/&lt;span class=&quot;n&quot;&gt;some_path&lt;/span&gt;/&lt;span class=&quot;n&quot;&gt;some_big_file&lt;/span&gt;.&lt;span class=&quot;n&quot;&gt;zip&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Our CDN has to strip &lt;code class=&quot;highlighter-rouge&quot;&gt;/cdn/&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;dummy.iiit.ac.in&lt;/code&gt; parts of the request URI and pass rest of the request URI to &lt;code class=&quot;highlighter-rouge&quot;&gt;dummy.iiit.ac.in&lt;/code&gt;. The configuration below has to go inside the &lt;code class=&quot;highlighter-rouge&quot;&gt;http {}&lt;/code&gt; block of Nginx configuration.&lt;/p&gt;
 

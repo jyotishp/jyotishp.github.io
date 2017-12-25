@@ -1,3 +1,6 @@
+	<div class="footer-comments-box">
+		<div class="disqus_thread" id="disqus_thread"></div>
+	</div>
 	</div>
 	<div class="cat">
 		<p>
@@ -22,7 +25,20 @@
 		ga('create', 'UA-77739395-1', 'auto');
 		ga('send', 'pageview');
 	</script>
+	<script>
+		var disqus_config = function () {
+			this.page.url = "https://jyotishp.ml{{ page.url }}";
+			this.page.identifier = "{{ page.url }}";
+		};
+		(function() {
+		var d = document, s = d.createElement('script');
+		s.src = 'https://jyotishp.disqus.com/embed.js';
+		s.setAttribute('data-timestamp', +new Date());
+		(d.head || d.body).appendChild(s);
+	})();
+	</script>
 	<script type="text/javascript" src="{{ site.baseurl }}/js/headroom.min.js"></script>
+	<!-- <script type="text/javascript" src="{{ site.baseurl }}/js/sticker.js"></script> -->
 	<script type="text/javascript" src="{{ site.baseurl }}/js/app.js"></script>
 	</body>
 </html>

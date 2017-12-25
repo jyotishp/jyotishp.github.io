@@ -171,11 +171,11 @@ It is possible to automate config generation by fetching the AFXR record and pro
 Again, first install Nginx, enable at boot and start it. Now, change the logging format also as required.
 
 The Nginx configuration for CDN is fairly straight forward. We'll need only single (or two if looking for separate SSL one) server block. Before we proceed, let's revise what we want to do. We have some files that we want our CDN to serve. For example, if the client requests for 
-{% highlight html %}
+{% highlight conf %}
 http://dummy.iiit.ac.in/some_path/some_big_file.zip
 {% endhighlight %}
 it gets `302` redirect to 
-{% highlight html %}
+{% highlight conf %}
 http://cdn.iiit.ac.in/cdn/dummy.iiit.ac.in/some_path/some_big_file.zip
 {% endhighlight %}
 Our CDN has to strip `/cdn/` and `dummy.iiit.ac.in` parts of the request URI and pass rest of the request URI to `dummy.iiit.ac.in`. The configuration below has to go inside the `http {}` block of Nginx configuration.
