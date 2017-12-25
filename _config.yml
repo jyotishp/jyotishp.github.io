@@ -7,11 +7,11 @@
 
 # Site settings
 title: Jyotish P
-email: jyotish@myself.com
+email: srisai.poonganam@research.iiit.ac.in
 description: > # this means to ignore newlines until "baseurl:"
   Jyotish P - A Machine Learning enthusiast and a part time SysAdmin.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "jyotishp.github.io" # the base hostname & protocol for your site
+url: "jyotishp.ml" # the base hostname & protocol for your site
 
 github_username:  jyotishp
 permalink: /:categories/:title
