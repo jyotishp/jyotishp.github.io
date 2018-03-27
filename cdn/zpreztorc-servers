@@ -20,8 +20,6 @@ zstyle ':prezto:load' pmodule \
   'directory' \
   'spectrum' \
   'utility' \
-  'updater' \
-  'backuper' \
   'completion' \
   'history-substring-search' \
   'syntax-highlighting' \
