@@ -1,0 +1,41 @@
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
+# Customize to your needs...
+function proxy_set() { 
+  export {http,https}_proxy='http://proxy.iiit.ac.in:8080'
+  export no_proxy='localhost, 127.0.0.1, iiit.ac.in, .iiit.ac.in, iiit.net, .iiit.net, 172.16.0.0/12, 192.168.0.0/16, 10.0.0.0/8'
+}
+proxy_set
+function proxy_unset() {
+  unset {http,https,no}_proxy
+}
+
+autoload bashcompinit
+bashcompinit
+
+if [[ -f /etc/bash_completion.d/vzctl.sh ]]; then
+  source /etc/bash_completion.d/vzctl.sh
+fi
+
+if [[ -f /etc/bash_completion.d/prlctl.sh ]]; then
+  source /etc/bash_completion.d/prlctl.sh
+fi
+
+if [[ -f $HOME/.zsh-override ]]; then
+   source $HOME/.zsh-override
+fi
+
+# Aliases
+# Laravel
+alias artisan="php artisan"
+alias serve="php artisan serve"
+alias tinker="php artisan tinker"
+
+# Systemctl
+alias scon="systemctl start"
+alias scof="systemctl stop"
+alias scst="systemctl status"
+alias scre="systemctl restart"
