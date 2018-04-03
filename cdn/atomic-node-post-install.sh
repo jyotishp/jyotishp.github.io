@@ -1,6 +1,6 @@
 unset http_proxy
 unset https_proxy
-curl -LO https://web.iiit.ac.in/~path.kolekar/a.zsh
+curl -LO https://web.iiit.ac.in/~parth.kolekar/a.zsh
 
 # Enabling cluster services at boot
 systemctl enable flanneld kubelet kube-proxy
