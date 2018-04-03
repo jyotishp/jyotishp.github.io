@@ -8,7 +8,7 @@ systemctl daemon-reload
 systemctl restart docker.service
 
 # Atomic proxy
-cat "proxy=http://proxy.iiit.ac.in:8080" >> /etc/ostree/remotes.d/centos-atomic-host.conf
+echo "proxy=http://proxy.iiit.ac.in:8080" >> /etc/ostree/remotes.d/centos-atomic-host.conf
 
 # Proxy for Yum Repos
 sed -i '/gpgcheck=1/a proxy=http:\/\/proxy.iiit.ac.in:8080' /etc/yum.repos.d/CentOS-Base.repo
