@@ -30,6 +30,7 @@ body {
 
 h1, h2, h3, footer {
 	font-family:"Josefin Sans",sans-serif;
+  font-weight: lighter;
 }
 
 h1, h2, a {
@@ -449,19 +450,28 @@ Modules - reusable parts of our design
 }
 
 .timeline span.icon-embed2 {
-    position: absolute;
-    top: 8px;
-    left: 5px;
-    color: #fff;
-    font-size: 25px;
+  position: absolute;
+  top: 8px;
+  left: 5px;
+  color: #fff;
+  font-size: 25px;
 }
 
 .timeline span.icon-microchip {
-    position: absolute;
-    top: 9px;
-    left: 9px;
-    color: #fff;
-    font-size: 25px;
+  position: absolute;
+  top: 9px;
+  left: 9px;
+  color: #fff;
+  font-size: 25px;
+}
+
+.timeline h3 {
+  font-size: 2rem;
+  margin-bottom: 0;
+}
+
+.timeline ul {
+  margin-top: 0;
 }
 
 @media only screen and (min-width: 1170px) {

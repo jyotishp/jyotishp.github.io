@@ -1,10 +1,46 @@
-- title: Image Captioning
-  url: https://nueral-captioning.jyotishp.ml
+- title: Accounts Management Portal
+  url: https://accounts.iiit.ac.in
   type: coding
-  date: November 2017 - December 2017
+  date: Monsoon 2018*
   summary:
-    - Solution using an attention based translation model
-    - Used CNN to encode images and LSTM to decode image features
+    - A central portal to manage and review account details, logs, etc., for IIIT Hyderabad (inspired from accounts.google.com).
+
+- title: Unrolling the Shutter
+  url: https://github.com/jyotishp/rolling-shutter-correction
+  type: coding
+  date: Spring 2018
+  summary:
+    - A Convolutional Neural Network that corrects the distortion caused due to rolling shutter of the camera from a single image.
+
+- title: Navigation of Non-Holonomic Robots
+  url: javascript:void()
+  type: robotics
+  date: Spring 2018
+  summary:
+    - Dynamic and static obstacle avoidance of fixed wing drone.
+    - Multiple planners based on velocity obstacle and time scaling.
+
+- title: Guest Accounts Management
+  url: https://accounts.iiit.ac.in/guest
+  type: coding
+  date: Spring 2018
+  summary:
+    - Portal for automation of adding guests to institute’s central LDAP, restrict the logins of these users only to access institute network and automation of account deletion from LDAP.
+
+- title: Image Captioning
+  url: https://neural-captioning.jyotishp.ml
+  type: coding
+  date: Monsoon 2017
+  summary:
+    - A combination of a CNN and an LSTM networks that gives a caption for the input image.
+    - Different versions of the network by tweaking LSTM, <br/> &nbsp;&nbsp;&nbsp; 1. Traditional LSTM <br/>&nbsp;&nbsp;&nbsp; 2. With attention<br/>&nbsp;&nbsp;&nbsp; 3. With sentinel gate
+
+- title: Peer to Peer File Syncer
+  url: javascript:void()
+  type: coding
+  date: Monsoon 2016
+  summary:
+    - A dropbox like file syncer.
 
 # - title: cDocket
 #   url: https://cdocket.com
@@ -18,15 +54,15 @@
 - title: Cooperative Modular Explorer Robot
   url: javascript:void()
   type: hardware
-  date: November 2016 - March 2017
+  date: Nov 2016 - Mar 2017
   summary:
     - Part of Texas Instruments Analog Design Challenge
     - Designed and implemented power supply units for the robot
 
 - title: Robot to cross craters
   url: javascript:void()
-  type: embed
-  date: October 2016 - March 2017
+  type: robotics
+  date: Oct 2016 - Mar 2017
   summary:
     - Part of eYantra competition
     - Targets at filling the craters on its way with neighbouring boulders
@@ -35,14 +71,14 @@
 - title: Online DC UPS
   url: javascript:void()
   type: hardware
-  date: January - April, 2015
+  date: Spring 2015
   summary:
     - Part of coursework for Power Electronics
 
 - title: Digital Thermometer
   url: javascript:void()
   type: hardware
-  date: August - November, 2015
+  date: Monsoon 2015
   summary:
     - Simple thermoter based on thermistor
     - LEDs are used for temperature measurement

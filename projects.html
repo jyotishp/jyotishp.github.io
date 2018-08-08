@@ -11,7 +11,32 @@ permalink: /projects
 				<a href="mailto:jyotish@myself.com?bcc=hypothesis1996@gmail.com&subject=New Project Invite" target="_blank" class="btn"><span class="icon-share2"></span> Share Idea</a>-->
 			</p>
 			<section id="cd-timeline" class="cd-container">
-				<p class="intro">Under construnction</p>
+				{% for project in site.data.projects %}
+					<div class="cd-timeline-block">
+						{% if project.type == 'coding' %}
+						<div class="cd-timeline-img cd-red">
+							<span class="icon-embed2"></span>
+						</div>
+						{% elsif project.type == 'hardware' %}
+						<div class="cd-timeline-img cd-green">
+							<span class="icon-microchip"></span>
+						</div>
+						{% elsif project.type == 'robotics' %}
+						<div class="cd-timeline-img cd-yellow">
+							<span class="icon-microchip"></span>
+						</div>
+						{% endif %}
+						<div class="cd-timeline-content">
+							<h3><a href="{{ project.url }}">{{ project.title }}</a></h3>
+							<ul>
+							{% for line in project.summary %}
+								<li>{{ line }}</li>
+							{% endfor %}
+							</ul>
+							<span class="cd-date">{{ project.date }}</span>
+						</div> <!-- cd-timeline-content -->
+					</div> <!-- cd-timeline-block -->
+				{% endfor %}
 			</section> <!-- cd-timeline -->
 			<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 			<script src="js/main.js"></script> <!-- Resource jQuery -->
