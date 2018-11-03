@@ -1,3 +1,20 @@
+- title: Internet Relay Chat
+  url: https://github.com/jyotishp/SimpleIRC
+  type: coding
+  date: Monsoon 2018
+  summary:
+      - A simple implementation of IRC client-serverin C++.
+      - Supports multiple chatrooms with multi-threaded backend.
+
+- title: Poisson Image Editing
+  url: https://github.com/jyotishp/Poisson-Image-Editing
+  type: coding
+  date: Monsoon 2018
+  summary:
+      - Seamless cloning/patching of images using Poisson differential equations.
+      - Pose image editing tasks as a minimisation problem.
+      - Try other image editing tasks like texture filtering, concealment, etc., using the same formulation.
+
 - title: Accounts Management Portal
   url: https://accounts.iiit.ac.in
   type: coding
