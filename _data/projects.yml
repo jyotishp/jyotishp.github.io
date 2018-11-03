@@ -3,11 +3,11 @@
   type: coding
   date: Monsoon 2018
   summary:
-      - A simple implementation of IRC client-serverin C++.
+      - A simple implementation of IRC client-server in C++.
       - Supports multiple chatrooms with multi-threaded backend.
 
 - title: Poisson Image Editing
-  url: https://github.com/jyotishp/Poisson-Image-Editing
+  url: https://github.com/jyotishp/Poisson-Image-Editor
   type: coding
   date: Monsoon 2018
   summary:
