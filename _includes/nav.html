@@ -1,7 +1,6 @@
 {% assign navurl = page.url | remove: 'index.html' %}
-	<body>
-		<nav class="navbar">
-			{% for item in site.data.navigation %}
-				<a href="{{ item.url }}" class="item{% if item.url == navurl %} active{% endif %}">{{ item.text }}</a>
-			{% endfor %}
-		</nav>
+<nav class="navbar">
+	{% for item in site.data.navigation %}
+		<a href="{{ item.url }}" class="item{% if item.url == navurl %} active{% endif %}">{{ item.text }}</a>
+	{% endfor %}
+</nav>
